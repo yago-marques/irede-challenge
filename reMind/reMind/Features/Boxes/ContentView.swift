@@ -8,15 +8,12 @@
 import SwiftUI
 
 struct ContentView: View {
+    @Environment(\.colorScheme) var colorScheme
+
     var body: some View {
-        VStack {
-            Button("Tap!") {
-                print("Tapped...")
-            }
-            .buttonStyle(.borderedProminent)
-            .foregroundColor(.black)
-        }
-        .padding()
+        Rectangle()
+            .fill(Color.clear)
+            .background(reBackground())
     }
 }
 
