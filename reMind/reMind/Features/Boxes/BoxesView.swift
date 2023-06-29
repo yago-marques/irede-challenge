@@ -14,8 +14,7 @@ struct Box: Identifiable {
     var theme: BoxTheme
 }
 
-struct ContentView: View {
-
+struct BoxesView: View {
     private let columns: [GridItem] = [
         GridItem(.adaptive(minimum: 140), spacing: 20),
         GridItem(.adaptive(minimum: 140), spacing: 20)
@@ -60,6 +59,6 @@ struct ContentView_Previews: PreviewProvider {
     ]
 
     static var previews: some View {
-        ContentView(boxes: ContentView_Previews.boxes)
+        BoxesView(boxes: ContentView_Previews.boxes)
     }
 }
