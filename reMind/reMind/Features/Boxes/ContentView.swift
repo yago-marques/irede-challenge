@@ -8,12 +8,11 @@
 import SwiftUI
 
 struct ContentView: View {
-    @Environment(\.colorScheme) var colorScheme
-
     var body: some View {
-        Rectangle()
-            .fill(Color.clear)
-            .background(reBackground())
+        BoxCardView(boxName: "Box",
+                    numberOfTerms: 10,
+                    theme: .mauve)
+            .reBadge("10")
     }
 }
 
