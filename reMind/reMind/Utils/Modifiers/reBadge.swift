@@ -38,7 +38,8 @@ struct reBadgeModifier: ViewModifier {
                                     .frame(height: 35)
                                     .frame(minWidth: 35, maxWidth: 40)
                             }
-                            .position(x: reader.size.width - 2, y: 2)
+                            .position(x: reader.size.width - 4, y: 4)
+                            .zIndex(.infinity)
                     }
                 }
         }
