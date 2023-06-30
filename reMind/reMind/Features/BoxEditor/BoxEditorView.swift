@@ -11,7 +11,7 @@ struct BoxEditorView: View {
     @State var name: String
     @State var keywords: String
     @State var description: String
-//    @State var theme: BoxTheme
+    @State var theme: Int
 
     var body: some View {
         NavigationStack {
@@ -23,6 +23,9 @@ struct BoxEditorView: View {
                 
                 reTextEditor(title: "Description",
                              text: $description)
+
+                reRadioButtonGroup(title: "Theme",
+                                   currentSelection: $theme)
                 Spacer()
             }
             .padding()
@@ -51,6 +54,7 @@ struct BoxEditorView_Previews: PreviewProvider {
     static var previews: some View {
         BoxEditorView(name: "",
                       keywords: "",
-                      description: "")
+                      description: "",
+                      theme: 0)
     }
 }

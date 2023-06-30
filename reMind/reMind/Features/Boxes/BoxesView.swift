@@ -51,7 +51,7 @@ struct BoxesView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct BoxesView_Previews: PreviewProvider {
     static let boxes: [Box] = [
         Box(id: .init(), name: "Box 1", numberOfTerms: 10, theme: .mauve),
         Box(id: .init(), name: "Box 2", numberOfTerms: 20, theme: .aquamarine),
@@ -59,6 +59,6 @@ struct ContentView_Previews: PreviewProvider {
     ]
 
     static var previews: some View {
-        BoxesView(boxes: ContentView_Previews.boxes)
+        BoxesView(boxes: BoxesView_Previews.boxes)
     }
 }
