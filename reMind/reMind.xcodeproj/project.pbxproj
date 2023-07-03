@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		FE3ABEC72A4F59D800432ED4 /* reRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */; };
 		FE3ABECD2A4F5E8F00432ED4 /* reRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABECC2A4F5E8F00432ED4 /* reRadioButtonGroup.swift */; };
+		FE3ABED02A4F65BC00432ED4 /* TermEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABECF2A4F65BC00432ED4 /* TermEditorView.swift */; };
+		FE3ABED22A4F680C00432ED4 /* reButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED12A4F680C00432ED4 /* reButtonStyle.swift */; };
 		FE5B807A2A4CB0DA00711F80 /* reBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5B80792A4CB0DA00711F80 /* reBadge.swift */; };
 		FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A9F992A461E2400A84FC9 /* reMindApp.swift */; };
 		FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A9F9B2A461E2400A84FC9 /* BoxesView.swift */; };
@@ -26,6 +28,8 @@
 /* Begin PBXFileReference section */
 		FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reRadioButton.swift; sourceTree = "<group>"; };
 		FE3ABECC2A4F5E8F00432ED4 /* reRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reRadioButtonGroup.swift; sourceTree = "<group>"; };
+		FE3ABECF2A4F65BC00432ED4 /* TermEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermEditorView.swift; sourceTree = "<group>"; };
+		FE3ABED12A4F680C00432ED4 /* reButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reButtonStyle.swift; sourceTree = "<group>"; };
 		FE5B80792A4CB0DA00711F80 /* reBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reBadge.swift; sourceTree = "<group>"; };
 		FE6A9F962A461E2400A84FC9 /* reMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6A9F992A461E2400A84FC9 /* reMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reMindApp.swift; sourceTree = "<group>"; };
@@ -58,6 +62,14 @@
 				FE3ABECC2A4F5E8F00432ED4 /* reRadioButtonGroup.swift */,
 			);
 			path = Components;
+			sourceTree = "<group>";
+		};
+		FE3ABECE2A4F654800432ED4 /* TermEditor */ = {
+			isa = PBXGroup;
+			children = (
+				FE3ABECF2A4F65BC00432ED4 /* TermEditorView.swift */,
+			);
+			path = TermEditor;
 			sourceTree = "<group>";
 		};
 		FE6A9F8D2A461E2400A84FC9 = {
@@ -147,6 +159,7 @@
 			children = (
 				FEE2DC722A4B5CE4006A535D /* Palette.swift */,
 				FEDE8E062A4DFEBD00EEF7EA /* reTexFieldStyle.swift */,
+				FE3ABED12A4F680C00432ED4 /* reButtonStyle.swift */,
 			);
 			path = Styles;
 			sourceTree = "<group>";
@@ -162,6 +175,7 @@
 		FE6A9FAE2A461FF200A84FC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FE3ABECE2A4F654800432ED4 /* TermEditor */,
 				FE6A9FAF2A461FF900A84FC9 /* Boxes */,
 				FEDE8E032A4DF79900EEF7EA /* BoxEditor */,
 			);
@@ -283,10 +297,12 @@
 				FEE2DC752A4B6172006A535D /* reBackground.swift in Sources */,
 				FE3ABECD2A4F5E8F00432ED4 /* reRadioButtonGroup.swift in Sources */,
 				FEE2DC732A4B5CE4006A535D /* Palette.swift in Sources */,
+				FE3ABED22A4F680C00432ED4 /* reButtonStyle.swift in Sources */,
 				FE5B807A2A4CB0DA00711F80 /* reBadge.swift in Sources */,
 				FE3ABEC72A4F59D800432ED4 /* reRadioButton.swift in Sources */,
 				FEDE8E0D2A4E037F00EEF7EA /* reTextEditor.swift in Sources */,
 				FEDE8E092A4DFFE100EEF7EA /* BoxEditorView.swift in Sources */,
+				FE3ABED02A4F65BC00432ED4 /* TermEditorView.swift in Sources */,
 				FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */,
 				FEDE8E072A4DFEBD00EEF7EA /* reTexFieldStyle.swift in Sources */,
 				FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */,
