@@ -19,32 +19,30 @@ struct BoxesView: View {
         GridItem(.adaptive(minimum: 140), spacing: 20),
         GridItem(.adaptive(minimum: 140), spacing: 20)
     ]
-
+    
     @State var boxes: [Box]
-
+    
     var body: some View {
-        NavigationStack {
-            ScrollView(.vertical, showsIndicators: false) {
-                LazyVGrid(columns: columns, spacing: 20) {
-                    ForEach(boxes) { box in
-                        BoxCardView(boxName: box.name,
-                                    numberOfTerms: box.numberOfTerms,
-                                    theme: box.theme)
-                        .reBadge("10")
-                    }
+        ScrollView(.vertical, showsIndicators: false) {
+            LazyVGrid(columns: columns, spacing: 20) {
+                ForEach(boxes) { box in
+                    BoxCardView(boxName: box.name,
+                                numberOfTerms: box.numberOfTerms,
+                                theme: box.theme)
+                    .reBadge("10")
                 }
-                .padding(40)
             }
-            .padding(-20)
-            .navigationTitle("Boxes")
-            .background(reBackground())
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button {
-                        print("plus button tapped!")
-                    } label: {
-                        Image(systemName: "plus")
-                    }
+            .padding(40)
+        }
+        .padding(-20)
+        .navigationTitle("Boxes")
+        .background(reBackground())
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button {
+                    print("plus button tapped!")
+                } label: {
+                    Image(systemName: "plus")
                 }
             }
         }
@@ -57,8 +55,10 @@ struct BoxesView_Previews: PreviewProvider {
         Box(id: .init(), name: "Box 2", numberOfTerms: 20, theme: .aquamarine),
         Box(id: .init(), name: "Box 3", numberOfTerms: 30, theme: .lavender)
     ]
-
+    
     static var previews: some View {
-        BoxesView(boxes: BoxesView_Previews.boxes)
+        NavigationStack {
+            BoxesView(boxes: BoxesView_Previews.boxes)
+        }
     }
 }
