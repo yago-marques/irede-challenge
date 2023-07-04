@@ -37,6 +37,6 @@ struct reRadioButton_Previews: PreviewProvider {
     static var previews: some View {
         reRadioButton(tag: 0,
                       currentSelection: .constant(0),
-                      color: BoxTheme.mauve.render)
+                      color: reTheme.mauve.render)
     }
 }

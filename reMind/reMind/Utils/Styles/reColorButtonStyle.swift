@@ -8,9 +8,9 @@
 import SwiftUI
 
 struct reColorButtonStyle: ButtonStyle {
-    @State var theme: BoxTheme
+    @State var theme: reTheme
 
-    init(_ theme: BoxTheme) {
+    init(_ theme: reTheme) {
         self.theme = theme
     }
 

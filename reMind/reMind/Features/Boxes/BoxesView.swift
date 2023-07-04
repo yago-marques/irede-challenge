@@ -7,13 +7,6 @@
 
 import SwiftUI
 
-struct Box: Identifiable {
-    var id: UUID
-    var name: String
-    var numberOfTerms: Int
-    var theme: BoxTheme
-}
-
 struct BoxesView: View {
     private let columns: [GridItem] = [
         GridItem(.adaptive(minimum: 140), spacing: 20),
@@ -51,9 +44,9 @@ struct BoxesView: View {
 
 struct BoxesView_Previews: PreviewProvider {
     static let boxes: [Box] = [
-        Box(id: .init(), name: "Box 1", numberOfTerms: 10, theme: .mauve),
-        Box(id: .init(), name: "Box 2", numberOfTerms: 20, theme: .aquamarine),
-        Box(id: .init(), name: "Box 3", numberOfTerms: 30, theme: .lavender)
+        Box(id: .init(), name: "Box 1", numberOfTerms: 10, theme: .mauve, terms: []),
+        Box(id: .init(), name: "Box 2", numberOfTerms: 20, theme: .aquamarine, terms: []),
+        Box(id: .init(), name: "Box 3", numberOfTerms: 30, theme: .lavender, terms: [])
     ]
     
     static var previews: some View {

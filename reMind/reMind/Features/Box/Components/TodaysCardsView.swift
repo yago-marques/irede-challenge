@@ -9,7 +9,7 @@ import SwiftUI
 
 struct TodaysCardsView: View {
     @State var numberOfPendingCards: Int
-    @State var theme: BoxTheme
+    @State var theme: reTheme
     
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
