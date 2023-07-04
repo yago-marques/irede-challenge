@@ -14,11 +14,18 @@
 		FE3ABED52A5326C200432ED4 /* BoxView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED42A5326C200432ED4 /* BoxView.swift */; };
 		FE3ABED82A5328FD00432ED4 /* TodaysCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED72A5328FD00432ED4 /* TodaysCardsView.swift */; };
 		FE3ABEDA2A532A4D00432ED4 /* reColorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED92A532A4D00432ED4 /* reColorButtonStyle.swift */; };
+		FE3ABEDF2A53522A00432ED4 /* SwipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEDE2A53522A00432ED4 /* SwipperView.swift */; };
+		FE3ABEE22A53544B00432ED4 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE12A53544B00432ED4 /* Box.swift */; };
+		FE3ABEE42A53545500432ED4 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE32A53545500432ED4 /* Term.swift */; };
+		FE3ABEE62A5354AF00432ED4 /* reTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE52A5354AF00432ED4 /* reTheme.swift */; };
+		FE3ABEE92A53563F00432ED4 /* SwipperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE82A53563F00432ED4 /* SwipperLabel.swift */; };
 		FE5B807A2A4CB0DA00711F80 /* reBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5B80792A4CB0DA00711F80 /* reBadge.swift */; };
 		FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A9F992A461E2400A84FC9 /* reMindApp.swift */; };
 		FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A9F9B2A461E2400A84FC9 /* BoxesView.swift */; };
 		FE6A9F9E2A461E2500A84FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6A9F9D2A461E2500A84FC9 /* Assets.xcassets */; };
 		FE6A9FA12A461E2500A84FC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6A9FA02A461E2500A84FC9 /* Preview Assets.xcassets */; };
+		FEA517AA2A548FBC0004D9D1 /* SwipeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */; };
+		FEA517AE2A54963E0004D9D1 /* SwipperCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA517AD2A54963E0004D9D1 /* SwipperCard.swift */; };
 		FEDE8E052A4DFADE00EEF7EA /* reTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE8E042A4DFADE00EEF7EA /* reTextField.swift */; };
 		FEDE8E072A4DFEBD00EEF7EA /* reTexFieldStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE8E062A4DFEBD00EEF7EA /* reTexFieldStyle.swift */; };
 		FEDE8E092A4DFFE100EEF7EA /* BoxEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE8E082A4DFFE100EEF7EA /* BoxEditorView.swift */; };
@@ -36,12 +43,19 @@
 		FE3ABED42A5326C200432ED4 /* BoxView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxView.swift; sourceTree = "<group>"; };
 		FE3ABED72A5328FD00432ED4 /* TodaysCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysCardsView.swift; sourceTree = "<group>"; };
 		FE3ABED92A532A4D00432ED4 /* reColorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reColorButtonStyle.swift; sourceTree = "<group>"; };
+		FE3ABEDE2A53522A00432ED4 /* SwipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperView.swift; sourceTree = "<group>"; };
+		FE3ABEE12A53544B00432ED4 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
+		FE3ABEE32A53545500432ED4 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
+		FE3ABEE52A5354AF00432ED4 /* reTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reTheme.swift; sourceTree = "<group>"; };
+		FE3ABEE82A53563F00432ED4 /* SwipperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperLabel.swift; sourceTree = "<group>"; };
 		FE5B80792A4CB0DA00711F80 /* reBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reBadge.swift; sourceTree = "<group>"; };
 		FE6A9F962A461E2400A84FC9 /* reMind.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = reMind.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE6A9F992A461E2400A84FC9 /* reMindApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reMindApp.swift; sourceTree = "<group>"; };
 		FE6A9F9B2A461E2400A84FC9 /* BoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesView.swift; sourceTree = "<group>"; };
 		FE6A9F9D2A461E2500A84FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE6A9FA02A461E2500A84FC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeReview.swift; sourceTree = "<group>"; };
+		FEA517AD2A54963E0004D9D1 /* SwipperCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperCard.swift; sourceTree = "<group>"; };
 		FEDE8E042A4DFADE00EEF7EA /* reTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reTextField.swift; sourceTree = "<group>"; };
 		FEDE8E062A4DFEBD00EEF7EA /* reTexFieldStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reTexFieldStyle.swift; sourceTree = "<group>"; };
 		FEDE8E082A4DFFE100EEF7EA /* BoxEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxEditorView.swift; sourceTree = "<group>"; };
@@ -95,6 +109,34 @@
 			path = Components;
 			sourceTree = "<group>";
 		};
+		FE3ABEDD2A53521600432ED4 /* Swipper */ = {
+			isa = PBXGroup;
+			children = (
+				FE3ABEE72A53562400432ED4 /* Components */,
+				FE3ABEDE2A53522A00432ED4 /* SwipperView.swift */,
+			);
+			path = Swipper;
+			sourceTree = "<group>";
+		};
+		FE3ABEE02A53543300432ED4 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				FE3ABEE12A53544B00432ED4 /* Box.swift */,
+				FE3ABEE32A53545500432ED4 /* Term.swift */,
+				FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		FE3ABEE72A53562400432ED4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				FE3ABEE82A53563F00432ED4 /* SwipperLabel.swift */,
+				FEA517AD2A54963E0004D9D1 /* SwipperCard.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
 		FE6A9F8D2A461E2400A84FC9 = {
 			isa = PBXGroup;
 			children = (
@@ -115,6 +157,7 @@
 			isa = PBXGroup;
 			children = (
 				FE6A9FA72A461F1400A84FC9 /* App */,
+				FE3ABEE02A53543300432ED4 /* Models */,
 				FE6A9FA82A461F1E00A84FC9 /* Utils */,
 				FE6A9FAE2A461FF200A84FC9 /* Features */,
 				FE6A9FB02A46202500A84FC9 /* Services */,
@@ -162,6 +205,7 @@
 		FE6A9FAA2A461F3E00A84FC9 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				FE3ABEE52A5354AF00432ED4 /* reTheme.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -199,6 +243,7 @@
 		FE6A9FAE2A461FF200A84FC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				FE3ABEDD2A53521600432ED4 /* Swipper */,
 				FE3ABED32A5326B500432ED4 /* Box */,
 				FE3ABECE2A4F654800432ED4 /* TermEditor */,
 				FE6A9FAF2A461FF900A84FC9 /* Boxes */,
@@ -319,7 +364,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				FEDE8E052A4DFADE00EEF7EA /* reTextField.swift in Sources */,
+				FE3ABEE92A53563F00432ED4 /* SwipperLabel.swift in Sources */,
 				FEE2DC752A4B6172006A535D /* reBackground.swift in Sources */,
+				FEA517AA2A548FBC0004D9D1 /* SwipeReview.swift in Sources */,
+				FEA517AE2A54963E0004D9D1 /* SwipperCard.swift in Sources */,
+				FE3ABEE22A53544B00432ED4 /* Box.swift in Sources */,
 				FE3ABED52A5326C200432ED4 /* BoxView.swift in Sources */,
 				FE3ABECD2A4F5E8F00432ED4 /* reRadioButtonGroup.swift in Sources */,
 				FEE2DC732A4B5CE4006A535D /* Palette.swift in Sources */,
@@ -333,6 +382,9 @@
 				FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */,
 				FE3ABED82A5328FD00432ED4 /* TodaysCardsView.swift in Sources */,
 				FEDE8E072A4DFEBD00EEF7EA /* reTexFieldStyle.swift in Sources */,
+				FE3ABEDF2A53522A00432ED4 /* SwipperView.swift in Sources */,
+				FE3ABEE42A53545500432ED4 /* Term.swift in Sources */,
+				FE3ABEE62A5354AF00432ED4 /* reTheme.swift in Sources */,
 				FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */,
 				FEE2DC782A4B70FA006A535D /* BoxCardView.swift in Sources */,
 			);
