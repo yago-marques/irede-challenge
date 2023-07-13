@@ -5,20 +5,22 @@
 //  Created by Pedro Sousa on 03/07/23.
 //
 
-import Foundation
+import SwiftUI
 
-struct Term: Identifiable {
-    var id: UUID
-    var boxID: UUID
-    var term: String
-    var meaning: String
-    var theme: reTheme
-    var creationDate: Date
-    var lastReview: Date
-    var srs: SpacedRepetitionSystem
+extension Term {
+    var srs: SpacedRepetitionSystem {
+        let rawSRS = Int(rawSRS)
+        return SpacedRepetitionSystem(rawValue: rawSRS) ?? SpacedRepetitionSystem.first
+    }
+
+    var theme: reTheme {
+        let rawTheme = Int(self.rawTheme)
+        return reTheme(rawValue: Int(self.rawTheme)) ?? reTheme.lavender
+    }
 }
 
 enum SpacedRepetitionSystem: Int {
+    case none = 0
     case first = 1
     case second = 2
     case third = 3

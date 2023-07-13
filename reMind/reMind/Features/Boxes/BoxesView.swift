@@ -19,7 +19,7 @@ struct BoxesView: View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: columns, spacing: 20) {
                 ForEach(boxes) { box in
-                    BoxCardView(boxName: box.name,
+                    BoxCardView(boxName: box.name ?? "Unkown",
                                 numberOfTerms: box.numberOfTerms,
                                 theme: box.theme)
                     .reBadge("10")
@@ -43,11 +43,21 @@ struct BoxesView: View {
 }
 
 struct BoxesView_Previews: PreviewProvider {
-    static let boxes: [Box] = [
-        Box(id: .init(), name: "Box 1", numberOfTerms: 10, theme: .mauve, terms: []),
-        Box(id: .init(), name: "Box 2", numberOfTerms: 20, theme: .aquamarine, terms: []),
-        Box(id: .init(), name: "Box 3", numberOfTerms: 30, theme: .lavender, terms: [])
-    ]
+    static let boxes: [Box] = {
+        let box1 = Box(context: CoreDataStack.inMemory.managedContext)
+        box1.name = "Box 1"
+        box1.rawTheme = 0
+
+        let box2 = Box(context: CoreDataStack.inMemory.managedContext)
+        box2.name = "Box 2"
+        box2.rawTheme = 1
+
+        let box3 = Box(context: CoreDataStack.inMemory.managedContext)
+        box3.name = "Box 3"
+        box3.rawTheme = 2
+        
+        return [box1, box2, box3]
+    }()
     
     static var previews: some View {
         NavigationStack {

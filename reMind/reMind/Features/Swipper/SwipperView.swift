@@ -46,17 +46,19 @@ struct SwipperView: View {
 }
 
 struct SwipperView_Previews: PreviewProvider {
+    static let term: Term = {
+        let term = Term(context: CoreDataStack.inMemory.managedContext)
+        term.value = "Term"
+        term.meaning = "Meaning"
+        term.rawSRS = 0
+        term.rawTheme = 0
+        
+        return term
+    }()
     static var previews: some View {
         NavigationStack {
             SwipperView(review: SwipeReview(termsToReview: [
-                Term(id: UUID(),
-                     boxID: UUID(),
-                     term: "Term",
-                     meaning: "Meaning",
-                     theme: .mauve,
-                     creationDate: Date(),
-                     lastReview: Date(),
-                     srs: .first)
+                Term(context: CoreDataStack.inMemory.managedContext)
             ]))
         }
     }

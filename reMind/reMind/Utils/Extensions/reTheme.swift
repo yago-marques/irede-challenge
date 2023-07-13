@@ -9,6 +9,6 @@ import SwiftUI
 
 extension reTheme {
     var render: Color {
-        Color(self.rawValue)
+        Color(self.name)
     }
 }

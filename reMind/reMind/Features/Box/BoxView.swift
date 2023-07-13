@@ -8,27 +8,30 @@
 import SwiftUI
 
 struct BoxView: View {
-    @State var boxName: String
-    @State var terms: [String]
-    @State var numberOfPendingTerms: Int
+    var box: Box
 
     @State private var searchText: String = ""
 
-    private var filteredTerms: [String] {
+    private var filteredTerms: [Term] {
+        let termsSet = box.terms as? Set<Term> ?? []
+        let terms = Array(termsSet).sorted { lhs, rhs in
+            (lhs.value ?? "") < (rhs.value ?? "")
+        }
+        
         if searchText.isEmpty {
             return terms
         } else {
-            return terms.filter { $0.contains(searchText) }
+            return terms.filter { ($0.value ?? "").contains(searchText) }
         }
     }
     
     var body: some View {
         List {
-                TodaysCardsView(numberOfPendingCards: numberOfPendingTerms,
+                TodaysCardsView(numberOfPendingCards: 0,
                                 theme: .mauve)
             Section {
                 ForEach(filteredTerms, id: \.self) { term in
-                    Text(term)
+                    Text(term.value ?? "Unknown")
                         .padding(.vertical, 8)
                         .fontWeight(.bold)
                         .swipeActions(edge: .trailing) {
@@ -53,7 +56,7 @@ struct BoxView: View {
         }
         .scrollContentBackground(.hidden)
         .background(reBackground())
-        .navigationTitle(boxName)
+        .navigationTitle(box.name ?? "Unknown")
         .searchable(text: $searchText, prompt: "")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
@@ -75,12 +78,33 @@ struct BoxView: View {
 }
 
 struct BoxView_Previews: PreviewProvider {
-    static let terms: [String] = (0...9).map { "Term \($0)" }
+    static let box: Box = {
+        let box = Box(context: CoreDataStack.inMemory.managedContext)
+        box.name = "Box 1"
+        box.rawTheme = 0
+        BoxView_Previews.terms.forEach { term in
+            box.addToTerms(term)
+        }
+        return box
+    }()
+
+    static let terms: [Term] = {
+        let term1 = Term(context: CoreDataStack.inMemory.managedContext)
+        term1.value = "Term 1"
+
+        let term2 = Term(context: CoreDataStack.inMemory.managedContext)
+        term2.value = "Term 2"
+
+        let term3 = Term(context: CoreDataStack.inMemory.managedContext)
+        term3.value = "Term 3"
+
+        return [term1, term2, term3]
+    }()
+    
+
     static var previews: some View {
         NavigationStack {
-            BoxView(boxName: "Programming",
-                    terms: BoxView_Previews.terms,
-                    numberOfPendingTerms: 10)
+            BoxView(box: BoxView_Previews.box)
         }
     }
 }

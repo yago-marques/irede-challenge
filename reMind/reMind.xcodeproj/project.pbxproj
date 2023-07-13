@@ -24,6 +24,11 @@
 		FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6A9F9B2A461E2400A84FC9 /* BoxesView.swift */; };
 		FE6A9F9E2A461E2500A84FC9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6A9F9D2A461E2500A84FC9 /* Assets.xcassets */; };
 		FE6A9FA12A461E2500A84FC9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE6A9FA02A461E2500A84FC9 /* Preview Assets.xcassets */; };
+		FE6F11AD2A6059FD003511F3 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F11AC2A6059FD003511F3 /* CoreDataStack.swift */; };
+		FE6F11AF2A605A21003511F3 /* CoreDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F11AE2A605A21003511F3 /* CoreDataModel.swift */; };
+		FE6F11B12A605A4C003511F3 /* NSObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F11B02A605A4C003511F3 /* NSObject.swift */; };
+		FE6F11B32A605A69003511F3 /* ActiveRecord.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6F11B22A605A69003511F3 /* ActiveRecord.swift */; };
+		FE6F11B62A605AB9003511F3 /* reMind.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = FE6F11B42A605AB9003511F3 /* reMind.xcdatamodeld */; };
 		FEA517AA2A548FBC0004D9D1 /* SwipeReview.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */; };
 		FEA517AE2A54963E0004D9D1 /* SwipperCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEA517AD2A54963E0004D9D1 /* SwipperCard.swift */; };
 		FEDE8E052A4DFADE00EEF7EA /* reTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = FEDE8E042A4DFADE00EEF7EA /* reTextField.swift */; };
@@ -54,6 +59,11 @@
 		FE6A9F9B2A461E2400A84FC9 /* BoxesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BoxesView.swift; sourceTree = "<group>"; };
 		FE6A9F9D2A461E2500A84FC9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE6A9FA02A461E2500A84FC9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		FE6F11AC2A6059FD003511F3 /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		FE6F11AE2A605A21003511F3 /* CoreDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModel.swift; sourceTree = "<group>"; };
+		FE6F11B02A605A4C003511F3 /* NSObject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSObject.swift; sourceTree = "<group>"; };
+		FE6F11B22A605A69003511F3 /* ActiveRecord.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiveRecord.swift; sourceTree = "<group>"; };
+		FE6F11B52A605AB9003511F3 /* reMind.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = reMind.xcdatamodel; sourceTree = "<group>"; };
 		FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipeReview.swift; sourceTree = "<group>"; };
 		FEA517AD2A54963E0004D9D1 /* SwipperCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperCard.swift; sourceTree = "<group>"; };
 		FEDE8E042A4DFADE00EEF7EA /* reTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reTextField.swift; sourceTree = "<group>"; };
@@ -124,6 +134,7 @@
 				FE3ABEE12A53544B00432ED4 /* Box.swift */,
 				FE3ABEE32A53545500432ED4 /* Term.swift */,
 				FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */,
+				FE6F11B42A605AB9003511F3 /* reMind.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -198,6 +209,7 @@
 		FE6A9FA92A461F3400A84FC9 /* Protocols */ = {
 			isa = PBXGroup;
 			children = (
+				FE6F11B22A605A69003511F3 /* ActiveRecord.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -206,6 +218,7 @@
 			isa = PBXGroup;
 			children = (
 				FE3ABEE52A5354AF00432ED4 /* reTheme.swift */,
+				FE6F11B02A605A4C003511F3 /* NSObject.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -264,6 +277,7 @@
 		FE6A9FB02A46202500A84FC9 /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				FE6F11AB2A605950003511F3 /* CoreData */,
 			);
 			path = Services;
 			sourceTree = "<group>";
@@ -274,6 +288,15 @@
 				FE6A9F9D2A461E2500A84FC9 /* Assets.xcassets */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		FE6F11AB2A605950003511F3 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				FE6F11AC2A6059FD003511F3 /* CoreDataStack.swift */,
+				FE6F11AE2A605A21003511F3 /* CoreDataModel.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		FEDE8E032A4DF79900EEF7EA /* BoxEditor */ = {
@@ -381,12 +404,17 @@
 				FE3ABED02A4F65BC00432ED4 /* TermEditorView.swift in Sources */,
 				FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */,
 				FE3ABED82A5328FD00432ED4 /* TodaysCardsView.swift in Sources */,
+				FE6F11AF2A605A21003511F3 /* CoreDataModel.swift in Sources */,
 				FEDE8E072A4DFEBD00EEF7EA /* reTexFieldStyle.swift in Sources */,
 				FE3ABEDF2A53522A00432ED4 /* SwipperView.swift in Sources */,
+				FE6F11B12A605A4C003511F3 /* NSObject.swift in Sources */,
+				FE6F11AD2A6059FD003511F3 /* CoreDataStack.swift in Sources */,
 				FE3ABEE42A53545500432ED4 /* Term.swift in Sources */,
+				FE6F11B32A605A69003511F3 /* ActiveRecord.swift in Sources */,
 				FE3ABEE62A5354AF00432ED4 /* reTheme.swift in Sources */,
 				FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */,
 				FEE2DC782A4B70FA006A535D /* BoxCardView.swift in Sources */,
+				FE6F11B62A605AB9003511F3 /* reMind.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -585,6 +613,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		FE6F11B42A605AB9003511F3 /* reMind.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				FE6F11B52A605AB9003511F3 /* reMind.xcdatamodel */,
+			);
+			currentVersion = FE6F11B52A605AB9003511F3 /* reMind.xcdatamodel */;
+			path = reMind.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE6A9F8E2A461E2400A84FC9 /* Project object */;
 }

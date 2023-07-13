@@ -5,18 +5,30 @@
 //  Created by Pedro Sousa on 03/07/23.
 //
 
-import Foundation
+import SwiftUI
 
-struct Box: Identifiable {
-    var id: UUID
-    var name: String
-    var numberOfTerms: Int
-    var theme: reTheme
-    var terms: [Term]
+extension Box {
+    var theme: reTheme {
+        let rawTheme = Int(self.rawTheme)
+        return reTheme(rawValue: Int(self.rawTheme)) ?? reTheme.lavender
+    }
+
+    var numberOfTerms: Int { self.terms?.count ?? 0 }    
 }
 
-enum reTheme: String {
-    case aquamarine
+enum reTheme: Int {
+    case aquamarine = 0
     case mauve
     case lavender
+
+    var name: String {
+        switch self {
+        case .aquamarine:
+            return "aquamarine"
+        case .mauve:
+            return "mauve"
+        case .lavender:
+            return "lavender"
+        }
+    }
 }
