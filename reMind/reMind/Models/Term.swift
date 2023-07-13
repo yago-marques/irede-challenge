@@ -9,12 +9,10 @@ import SwiftUI
 
 extension Term {
     var srs: SpacedRepetitionSystem {
-        let rawSRS = Int(rawSRS)
-        return SpacedRepetitionSystem(rawValue: rawSRS) ?? SpacedRepetitionSystem.first
+        return SpacedRepetitionSystem(rawValue: Int(rawSRS)) ?? SpacedRepetitionSystem.first
     }
 
     var theme: reTheme {
-        let rawTheme = Int(self.rawTheme)
         return reTheme(rawValue: Int(self.rawTheme)) ?? reTheme.lavender
     }
 }

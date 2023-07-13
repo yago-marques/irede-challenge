@@ -9,7 +9,6 @@ import SwiftUI
 
 extension Box {
     var theme: reTheme {
-        let rawTheme = Int(self.rawTheme)
         return reTheme(rawValue: Int(self.rawTheme)) ?? reTheme.lavender
     }
 
