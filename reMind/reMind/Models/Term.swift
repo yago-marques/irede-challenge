@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-extension Term {
+extension Term: CoreDataModel {
     var srs: SpacedRepetitionSystem {
         return SpacedRepetitionSystem(rawValue: Int(rawSRS)) ?? SpacedRepetitionSystem.first
     }

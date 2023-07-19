@@ -7,12 +7,12 @@
 
 import SwiftUI
 
-extension Box {
+extension Box: CoreDataModel {
     var theme: reTheme {
         return reTheme(rawValue: Int(self.rawTheme)) ?? reTheme.lavender
     }
 
-    var numberOfTerms: Int { self.terms?.count ?? 0 }    
+    var numberOfTerms: Int { self.terms?.count ?? 0 }
 }
 
 enum reTheme: Int {

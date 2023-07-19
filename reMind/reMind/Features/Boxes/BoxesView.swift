@@ -13,16 +13,21 @@ struct BoxesView: View {
         GridItem(.adaptive(minimum: 140), spacing: 20)
     ]
     
-    @State var boxes: [Box]
+    @ObservedObject var viewModel: BoxViewModel
+    @State private var isCreatingNewBox: Bool = false
     
     var body: some View {
         ScrollView(.vertical, showsIndicators: false) {
             LazyVGrid(columns: columns, spacing: 20) {
-                ForEach(boxes) { box in
-                    BoxCardView(boxName: box.name ?? "Unkown",
-                                numberOfTerms: box.numberOfTerms,
-                                theme: box.theme)
-                    .reBadge("10")
+                ForEach(viewModel.boxes) { box in
+                    NavigationLink {
+                        BoxView(box: box)
+                    } label: {
+                        BoxCardView(boxName: box.name ?? "Unkown",
+                                    numberOfTerms: box.numberOfTerms,
+                                    theme: box.theme)
+                        .reBadge(viewModel.getNumberOfPendingTerms(of: box))
+                    }
                 }
             }
             .padding(40)
@@ -33,20 +38,33 @@ struct BoxesView: View {
         .toolbar {
             ToolbarItem(placement: .navigationBarTrailing) {
                 Button {
-                    print("plus button tapped!")
+                    isCreatingNewBox.toggle()
                 } label: {
                     Image(systemName: "plus")
                 }
             }
         }
+        .sheet(isPresented: $isCreatingNewBox) {
+            BoxEditorView(name: "",
+                          keywords: "",
+                          description: "",
+                          theme: 0)
+        }
     }
 }
 
 struct BoxesView_Previews: PreviewProvider {
-    static let boxes: [Box] = {
+
+    static let viewModel: BoxViewModel = {
         let box1 = Box(context: CoreDataStack.inMemory.managedContext)
         box1.name = "Box 1"
         box1.rawTheme = 0
+
+        let term = Term(context: CoreDataStack.inMemory.managedContext)
+        term.lastReview = Calendar.current.date(byAdding: .day,
+                                                value: -5,
+                                                to: Date())!
+        box1.addToTerms(term)
 
         let box2 = Box(context: CoreDataStack.inMemory.managedContext)
         box2.name = "Box 2"
@@ -55,13 +73,13 @@ struct BoxesView_Previews: PreviewProvider {
         let box3 = Box(context: CoreDataStack.inMemory.managedContext)
         box3.name = "Box 3"
         box3.rawTheme = 2
-        
-        return [box1, box2, box3]
+
+        return BoxViewModel()
     }()
     
     static var previews: some View {
         NavigationStack {
-            BoxesView(boxes: BoxesView_Previews.boxes)
+            BoxesView(viewModel: BoxesView_Previews.viewModel)
         }
     }
 }

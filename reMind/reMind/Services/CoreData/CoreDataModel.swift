@@ -14,7 +14,7 @@ protocol CoreDataModel: ModelType {
 
 extension CoreDataModel where Self: NSManagedObject {
     static var context: NSManagedObjectContext {
-        return CoreDataStack.shared.managedContext
+        return CoreDataStack.inMemory.managedContext
     }
 
     static func newObject() -> Self {
