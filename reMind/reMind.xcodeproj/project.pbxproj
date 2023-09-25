@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FE1640962AC2126E0073317C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1640922AC2126E0073317C /* Box.swift */; };
+		FE1640992AC2126E0073317C /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1640952AC2126E0073317C /* Term.swift */; };
 		FE3ABEC72A4F59D800432ED4 /* reRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */; };
 		FE3ABECD2A4F5E8F00432ED4 /* reRadioButtonGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABECC2A4F5E8F00432ED4 /* reRadioButtonGroup.swift */; };
 		FE3ABED02A4F65BC00432ED4 /* TermEditorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABECF2A4F65BC00432ED4 /* TermEditorView.swift */; };
@@ -15,8 +17,6 @@
 		FE3ABED82A5328FD00432ED4 /* TodaysCardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED72A5328FD00432ED4 /* TodaysCardsView.swift */; };
 		FE3ABEDA2A532A4D00432ED4 /* reColorButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABED92A532A4D00432ED4 /* reColorButtonStyle.swift */; };
 		FE3ABEDF2A53522A00432ED4 /* SwipperView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEDE2A53522A00432ED4 /* SwipperView.swift */; };
-		FE3ABEE22A53544B00432ED4 /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE12A53544B00432ED4 /* Box.swift */; };
-		FE3ABEE42A53545500432ED4 /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE32A53545500432ED4 /* Term.swift */; };
 		FE3ABEE62A5354AF00432ED4 /* reTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE52A5354AF00432ED4 /* reTheme.swift */; };
 		FE3ABEE92A53563F00432ED4 /* SwipperLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEE82A53563F00432ED4 /* SwipperLabel.swift */; };
 		FE5B807A2A4CB0DA00711F80 /* reBadge.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE5B80792A4CB0DA00711F80 /* reBadge.swift */; };
@@ -42,6 +42,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		FE1640922AC2126E0073317C /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = SOURCE_ROOT; };
+		FE1640952AC2126E0073317C /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = SOURCE_ROOT; };
 		FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reRadioButton.swift; sourceTree = "<group>"; };
 		FE3ABECC2A4F5E8F00432ED4 /* reRadioButtonGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reRadioButtonGroup.swift; sourceTree = "<group>"; };
 		FE3ABECF2A4F65BC00432ED4 /* TermEditorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermEditorView.swift; sourceTree = "<group>"; };
@@ -50,8 +52,6 @@
 		FE3ABED72A5328FD00432ED4 /* TodaysCardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysCardsView.swift; sourceTree = "<group>"; };
 		FE3ABED92A532A4D00432ED4 /* reColorButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reColorButtonStyle.swift; sourceTree = "<group>"; };
 		FE3ABEDE2A53522A00432ED4 /* SwipperView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperView.swift; sourceTree = "<group>"; };
-		FE3ABEE12A53544B00432ED4 /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = "<group>"; };
-		FE3ABEE32A53545500432ED4 /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = "<group>"; };
 		FE3ABEE52A5354AF00432ED4 /* reTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reTheme.swift; sourceTree = "<group>"; };
 		FE3ABEE82A53563F00432ED4 /* SwipperLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperLabel.swift; sourceTree = "<group>"; };
 		FE5B80792A4CB0DA00711F80 /* reBadge.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reBadge.swift; sourceTree = "<group>"; };
@@ -133,8 +133,8 @@
 		FE3ABEE02A53543300432ED4 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				FE3ABEE12A53544B00432ED4 /* Box.swift */,
-				FE3ABEE32A53545500432ED4 /* Term.swift */,
+				FE1640922AC2126E0073317C /* Box.swift */,
+				FE1640952AC2126E0073317C /* Term.swift */,
 				FEA517A92A548FBC0004D9D1 /* SwipeReview.swift */,
 				FE6F11B42A605AB9003511F3 /* reMind.xcdatamodeld */,
 			);
@@ -395,8 +395,9 @@
 				FEE2DC752A4B6172006A535D /* reBackground.swift in Sources */,
 				FEA517AA2A548FBC0004D9D1 /* SwipeReview.swift in Sources */,
 				FEA517AE2A54963E0004D9D1 /* SwipperCard.swift in Sources */,
-				FE3ABEE22A53544B00432ED4 /* Box.swift in Sources */,
+				FE1640962AC2126E0073317C /* Box.swift in Sources */,
 				FE3ABED52A5326C200432ED4 /* BoxView.swift in Sources */,
+				FE1640992AC2126E0073317C /* Term.swift in Sources */,
 				FE3ABECD2A4F5E8F00432ED4 /* reRadioButtonGroup.swift in Sources */,
 				FEE2DC732A4B5CE4006A535D /* Palette.swift in Sources */,
 				FE3ABEDA2A532A4D00432ED4 /* reColorButtonStyle.swift in Sources */,
@@ -413,7 +414,6 @@
 				FE3ABEDF2A53522A00432ED4 /* SwipperView.swift in Sources */,
 				FE6F11B12A605A4C003511F3 /* NSObject.swift in Sources */,
 				FE6F11AD2A6059FD003511F3 /* CoreDataStack.swift in Sources */,
-				FE3ABEE42A53545500432ED4 /* Term.swift in Sources */,
 				FE6F11B32A605A69003511F3 /* ActiveRecord.swift in Sources */,
 				FE3ABEE62A5354AF00432ED4 /* reTheme.swift in Sources */,
 				FE6A9F9A2A461E2400A84FC9 /* reMindApp.swift in Sources */,

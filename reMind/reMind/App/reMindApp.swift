@@ -11,7 +11,9 @@ import SwiftUI
 struct reMindApp: App {
     var body: some Scene {
         WindowGroup {
-            Text("Init")
+            NavigationStack {
+                BoxesView(viewModel: BoxViewModel())
+            }
         }
     }
 }
