@@ -8,9 +8,12 @@
 import SwiftUI
 
 struct BoxView: View {
-    var box: Box
-
+    @State var box: Box
+    @Binding var paths: NavigationPath
+    @State var todaysCardInfo: TodaysCardsInfo
     @State private var searchText: String = ""
+    @State private var isEditPresented = false
+    @State private var isTermEditorPresented = false
 
     private var filteredTerms: [Term] {
         let termsSet = box.terms as? Set<Term> ?? []
@@ -27,8 +30,11 @@ struct BoxView: View {
     
     var body: some View {
         List {
-                TodaysCardsView(numberOfPendingCards: 0,
-                                theme: .mauve)
+            TodaysCardsView(info: todaysCardInfo) {
+                paths.append(
+                    SwipeReview(termsToReview: box.termsToReview)
+                )
+            }
             Section {
                 ForEach(filteredTerms, id: \.self) { term in
                     Text(term.value ?? "Unknown")
@@ -36,7 +42,9 @@ struct BoxView: View {
                         .fontWeight(.bold)
                         .swipeActions(edge: .trailing) {
                             Button(role: .destructive) {
-                                print("delete")
+                                term.destroy()
+                                CoreDataStack.shared.saveContext()
+                                todaysCardInfo.cardsToReview = box.termsToReview.count
                             } label: {
                                 Image(systemName: "trash")
                             }
@@ -54,20 +62,42 @@ struct BoxView: View {
             }
 
         }
+        .sheet(isPresented: $isEditPresented) {
+            BoxEditorView(
+                name: box.name,
+                keywords: box.keywords ?? "",
+                description: box.boxDescription ?? "",
+                theme: Int(box.rawTheme),
+                mode: .edit,
+                createHandler: nil,
+                editHandler: editBox
+            )
+        }
+        .sheet(isPresented: $isTermEditorPresented) {
+            TermEditorView(
+                term: "",
+                meaning: "",
+                box: box,
+                addTermHandler: addTerm
+            )
+        }
+        .navigationDestination(for: SwipeReview.self) { review in
+            SwipperView(review: review, paths: $paths)
+        }
         .scrollContentBackground(.hidden)
         .background(reBackground())
-        .navigationTitle(box.name ?? "Unknown")
+        .navigationTitle(box.name)
         .searchable(text: $searchText, prompt: "")
         .toolbar {
             ToolbarItemGroup(placement: .navigationBarTrailing) {
                 Button {
-                    print("edit")
+                    isEditPresented = true
                 } label: {
                     Image(systemName: "square.and.pencil")
                 }
 
                 Button {
-                    print("add")
+                    isTermEditorPresented = true
                 } label: {
                     Image(systemName: "plus")
                 }
@@ -75,36 +105,19 @@ struct BoxView: View {
             }
         }
     }
-}
-
-struct BoxView_Previews: PreviewProvider {
-    static let box: Box = {
-        let box = Box(context: CoreDataStack.inMemory.managedContext)
-        box.name = "Box 1"
-        box.rawTheme = 0
-        BoxView_Previews.terms.forEach { term in
-            box.addToTerms(term)
-        }
-        return box
-    }()
-
-    static let terms: [Term] = {
-        let term1 = Term(context: CoreDataStack.inMemory.managedContext)
-        term1.value = "Term 1"
-
-        let term2 = Term(context: CoreDataStack.inMemory.managedContext)
-        term2.value = "Term 2"
-
-        let term3 = Term(context: CoreDataStack.inMemory.managedContext)
-        term3.value = "Term 3"
-
-        return [term1, term2, term3]
-    }()
+        
+    func editBox(_ editedBox: BoxInfo) {
+        box.name = editedBox.name
+        box.keywords = editedBox.keywords
+        box.rawTheme = Int16(editedBox.theme)
+        box.boxDescription = editedBox.description
+        CoreDataStack.shared.saveContext()
+        todaysCardInfo.theme = box.theme
+    }
     
-
-    static var previews: some View {
-        NavigationStack {
-            BoxView(box: BoxView_Previews.box)
-        }
+    func addTerm(_ term: Term) {
+        box.addToTerms(term)
+        CoreDataStack.shared.saveContext()
+        todaysCardInfo.cardsToReview = box.termsToReview.count
     }
 }

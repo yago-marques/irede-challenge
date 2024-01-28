@@ -23,12 +23,33 @@ struct reRadioButtonGroup: View {
                 reRadioButton(tag: 0,
                               currentSelection: $currentSelection,
                               color: Palette.mauve.render)
+                .overlay {
+                    if currentSelection == 0 {
+                        Circle()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.white)
+                    }
+                }
                 reRadioButton(tag: 1,
                               currentSelection: $currentSelection,
                               color: Palette.lavender.render)
+                .overlay {
+                    if currentSelection == 1 {
+                        Circle()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.white)
+                    }
+                }
                 reRadioButton(tag: 2,
                               currentSelection: $currentSelection,
                               color: Palette.aquamarine.render)
+                .overlay {
+                    if currentSelection == 2 {
+                        Circle()
+                            .frame(width: 25, height: 25)
+                            .foregroundStyle(.white)
+                    }
+                }
             }
         }
         .frame(maxWidth: .infinity, alignment: .leading)

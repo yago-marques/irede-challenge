@@ -8,8 +8,12 @@
 import SwiftUI
 
 struct SwipperView: View {
+    @Environment(\.presentationMode) var presententationMode
+    @Environment(\.colorScheme) var scheme
     @State var review: SwipeReview
     @State private var direction: SwipperDirection = .none
+    @Binding var paths: NavigationPath
+    @State var reviewedTerms = [Term]()
 
     var body: some View {
         VStack {
@@ -18,48 +22,61 @@ struct SwipperView: View {
 
             Spacer()
 
-            SwipperCard(direction: $direction,
-                frontContent: {
-                    Text("Term")
-                }, backContent: {
-                    Text("Meaning")
-                })
+            ZStack {
+                ForEach(review.termsToReview, id: \.self) { term in
+                    SwipperCard(direction: $direction, theme: term.theme, handle: goToNext,
+                        frontContent: {
+                            Text(term.value ?? "Empty")
+                                .foregroundStyle(.black)
+                        }, backContent: {
+                            Text(term.meaning ?? "Empty")
+                                .foregroundStyle(.black)
+                        })
+                }
+            }
+            
 
             Spacer()
 
             Button(action: {
-                print("finish review")
+                paths.append(SwipperReportInfo(
+                    review: review,
+                    reviewedTerms: reviewedTerms
+                ))
             }, label: {
                 Text("Finish Review")
+                    .foregroundStyle(scheme == .dark ? .black : .white)
                     .frame(maxWidth: .infinity, alignment: .center)
             })
             .buttonStyle(reButtonStyle())
             .padding(.bottom, 30)
                 
         }
+        .navigationDestination(for: SwipperReportInfo.self) { info in
+            SwipperReportView(
+                paths: $paths,
+                info: info
+            )
+        }
         .padding(.horizontal)
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(reBackground())
         .navigationTitle("\(review.termsToReview.count) terms left")
         .navigationBarTitleDisplayMode(.inline)
+        .navigationBarBackButtonHidden(true)
     }
-}
-
-struct SwipperView_Previews: PreviewProvider {
-    static let term: Term = {
-        let term = Term(context: CoreDataStack.inMemory.managedContext)
-        term.value = "Term"
-        term.meaning = "Meaning"
-        term.rawSRS = 0
-        term.rawTheme = 0
+    
+    func goToNext() {
+        guard let term = review.termsToReview.last else { return }
         
-        return term
-    }()
-    static var previews: some View {
-        NavigationStack {
-            SwipperView(review: SwipeReview(termsToReview: [
-                Term(context: CoreDataStack.inMemory.managedContext)
-            ]))
+        if direction == .left {
+            review.termsToReview.removeLast()
+        } else if direction == .right {
+            term.lastReview = Date()
+            CoreDataStack.shared.saveContext()
+            review.termsToReview.removeLast()
         }
+        
+        reviewedTerms.append(term)
     }
 }

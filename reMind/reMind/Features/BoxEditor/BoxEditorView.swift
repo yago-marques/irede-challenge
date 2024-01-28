@@ -7,11 +7,28 @@
 
 import SwiftUI
 
+enum BoxEditorMode {
+    case create
+    case edit
+}
+
+struct BoxInfo {
+    let name: String
+    let keywords: String
+    let description: String
+    let theme: Int
+}
+
 struct BoxEditorView: View {
+    @Environment(\.dismiss) var dismiss
+    
     @State var name: String
     @State var keywords: String
     @State var description: String
     @State var theme: Int
+    let mode: BoxEditorMode
+    let createHandler: ((Box) -> Void)?
+    let editHandler: ((BoxInfo) -> Void)?
 
     var body: some View {
         NavigationStack {
@@ -30,31 +47,41 @@ struct BoxEditorView: View {
             }
             .padding()
             .background(reBackground())
-            .navigationTitle("New Box")
+            .navigationTitle(mode == .create ? "New Box" : "Edit Box")
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
                 ToolbarItem(placement: .navigationBarLeading) {
                     Button("Cancel") {
-                        print("Cancel")
+                        dismiss()
                     }
                 }
 
                 ToolbarItem(placement: .navigationBarTrailing) {
                     Button("Save") {
-                        print("Cancel")
+                        if mode == .create {
+                            let box = Box.newObject()
+                            box.identifier = UUID()
+                            box.name = name
+                            box.rawTheme = Int16(theme)
+                            box.boxDescription = description
+                            box.keywords = keywords
+                            createHandler?(box)
+                        } else {
+                            editHandler?(
+                                .init(
+                                    name: name,
+                                    keywords: keywords,
+                                    description: description,
+                                    theme: theme
+                                )
+                            )
+                        }
+                        
+                        dismiss()
                     }
                     .fontWeight(.bold)
                 }
             }
         }
-    }
-}
-
-struct BoxEditorView_Previews: PreviewProvider {
-    static var previews: some View {
-        BoxEditorView(name: "",
-                      keywords: "",
-                      description: "",
-                      theme: 0)
     }
 }

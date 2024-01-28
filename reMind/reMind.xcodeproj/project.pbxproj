@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DF6267B22B66E40C0005D0BF /* SwipperReportView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DF6267B12B66E40C0005D0BF /* SwipperReportView.swift */; };
 		FE1640962AC2126E0073317C /* Box.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1640922AC2126E0073317C /* Box.swift */; };
 		FE1640992AC2126E0073317C /* Term.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE1640952AC2126E0073317C /* Term.swift */; };
 		FE3ABEC72A4F59D800432ED4 /* reRadioButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */; };
@@ -42,6 +43,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		DF6267B12B66E40C0005D0BF /* SwipperReportView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwipperReportView.swift; sourceTree = "<group>"; };
 		FE1640922AC2126E0073317C /* Box.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Box.swift; sourceTree = SOURCE_ROOT; };
 		FE1640952AC2126E0073317C /* Term.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Term.swift; sourceTree = SOURCE_ROOT; };
 		FE3ABEC62A4F59D800432ED4 /* reRadioButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = reRadioButton.swift; sourceTree = "<group>"; };
@@ -88,6 +90,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		DF6267B02B66E3F00005D0BF /* Report */ = {
+			isa = PBXGroup;
+			children = (
+				DF6267B12B66E40C0005D0BF /* SwipperReportView.swift */,
+			);
+			path = Report;
+			sourceTree = "<group>";
+		};
 		FE3ABECB2A4F5E7F00432ED4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -258,6 +268,7 @@
 		FE6A9FAE2A461FF200A84FC9 /* Features */ = {
 			isa = PBXGroup;
 			children = (
+				DF6267B02B66E3F00005D0BF /* Report */,
 				FE3ABEDD2A53521600432ED4 /* Swipper */,
 				FE3ABED32A5326B500432ED4 /* Box */,
 				FE3ABECE2A4F654800432ED4 /* TermEditor */,
@@ -406,6 +417,7 @@
 				FE3ABEC72A4F59D800432ED4 /* reRadioButton.swift in Sources */,
 				FEDE8E0D2A4E037F00EEF7EA /* reTextEditor.swift in Sources */,
 				FEDE8E092A4DFFE100EEF7EA /* BoxEditorView.swift in Sources */,
+				DF6267B22B66E40C0005D0BF /* SwipperReportView.swift in Sources */,
 				FE3ABED02A4F65BC00432ED4 /* TermEditorView.swift in Sources */,
 				FE6A9F9C2A461E2400A84FC9 /* BoxesView.swift in Sources */,
 				FE3ABED82A5328FD00432ED4 /* TodaysCardsView.swift in Sources */,
